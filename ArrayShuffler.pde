@@ -17,12 +17,10 @@ class ArrayShuffler{
     }
     for (int i = 0; i < names.length; i++){
       int randomNumber = (int) random(integers.size());
-      println("Integers before removal: " + integers);
-      //newNames[i] = names[randomNumber];
-      newNames[randomNumber] = names[i];
+      println(integers.get(randomNumber));
+      newNames[integers.get(randomNumber)] = names[i];
       integers.remove(randomNumber);
-      println("Integers after removal: " + integers);
-      println("New names: " + newNames);
+      println(newNames);
      }
     return newNames;
   }
