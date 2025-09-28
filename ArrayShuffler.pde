@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 class ArrayShuffler{
-  String[] names = new String[10];
+  String[] names;
   String[] newNames;
   
   ArrayShuffler(String[] tempNames){
@@ -10,18 +10,19 @@ class ArrayShuffler{
   }
   
   String[] shuffle(){
+    newNames = new String[names.length];
     ArrayList<Integer> integers = new ArrayList<>();
     for (int i = 0; i < names.length; i++){
       integers.add(i);
-      println(i);
-      println(integers);
     }
     for (int i = 0; i < names.length; i++){
       int randomNumber = (int) random(integers.size());
-      println(integers.size() + " " + randomNumber);
+      println("Integers before removal: " + integers);
       //newNames[i] = names[randomNumber];
+      newNames[randomNumber] = names[i];
       integers.remove(randomNumber);
-      println(integers.size() + " " + randomNumber);
+      println("Integers after removal: " + integers);
+      println("New names: " + newNames);
      }
     return newNames;
   }
